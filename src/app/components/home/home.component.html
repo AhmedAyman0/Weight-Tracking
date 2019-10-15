@@ -1,0 +1,8 @@
+<div class=" main text-center">
+        <img style="width: 24%;" src="../../../assets/imgs/calories.jpg">   
+  <h1>Track Your Weight,</h1>
+  <br />
+  <h2>Improve Your Regiem.</h2>
+  <a *ngIf="!logined" class="btn" [routerLink]="['/sign-up']">Sign Up Now</a>
+  <a *ngIf="logined" class="btn" [routerLink]="['/history']">Get On Track</a>
+</div>

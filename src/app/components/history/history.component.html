@@ -1,0 +1,14 @@
+<div style="width: 70%;" class="container">
+    <h1>Progress :</h1>
+    <hr />
+    <p-chart type="line" [data]="data"></p-chart>
+
+    <hr />
+    <br />
+    <div class="text-center">
+        <a class="btn" [routerLink]="['/history/add', loginedUser._id]">Add a Record</a>
+        <hr />
+    </div>
+    <br />
+    <router-outlet></router-outlet>
+</div>

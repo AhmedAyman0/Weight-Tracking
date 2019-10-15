@@ -1,0 +1,117 @@
+<div class="offset-md-3 col-md-6">
+    <h1>New User</h1>
+    <hr/>
+    <br>
+    <div *ngIf="!isUnique" class="error-message">
+        <span class="error-text">{{message}}</span>
+      </div>
+      <br>
+    <form style="font-weight: 600" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div  class="form-group">
+
+        <label for="userName">User Name</label>
+        <input
+          type="text"
+          formControlName="userName"
+          [ngClass]="{ 'is-invalid': submitted && form.userName.errors }"
+          id="userName"
+          class="form-control"
+          placeholder="User Name"
+        />
+        <div *ngIf="submitted && form.userName.errors" class="invalid-feedback">
+          <div *ngIf="form.userName.errors.required">User Name is required</div>
+          <div *ngIf="form.userName.errors.minlength">
+            Minimum Length is 10 characters
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && form.email.errors }"
+          id="email"
+          class="form-control"
+          placeholder="Your Email"
+        />
+        <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+          <div *ngIf="form.email.errors.required">Email is required</div>
+          <div *ngIf="form.email.errors.email">Email form is Invalid</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && form.password.errors }"
+          id="password"
+          class="form-control"
+          placeholder="Your Password"
+        />
+        <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+          <div *ngIf="form.password.errors.required">
+            Password is required
+          </div>
+          <div *ngIf="form.password.errors.pattern" class="invalid-feedback">Number is Invalid</div>
+        </div>
+      </div>
+      <div class="form-group">
+            <label for="weight">Current Weight (Kg)</label>
+            <input
+              type="weight"
+              formControlName="weight"
+              [ngClass]="{ 'is-invalid': submitted && form.weight.errors }"
+              id="weight"
+              class="form-control"
+              placeholder="Your weight"
+            />
+            <div *ngIf="submitted && form.weight.errors" class="invalid-feedback">
+              <div *ngIf="form.weight.errors.required">
+                weight is required
+              </div>
+              <div *ngIf="form.weight.errors.pattern" class="invalid-feedback">Number is Invalid</div>
+            </div>
+          </div>
+      <div class="form-group">
+        <label class="radio-label" for="gender">Gender</label><br>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                    <input
+                    type="radio"
+                    name='gender'
+                    value="Male"
+                    formControlName="gender"
+                    [ngClass]="{ 'is-invalid': submitted && form.gender.errors }"
+                    id="gender"
+
+                  />
+                  Male
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label" >
+                    <input
+                    type="radio"
+                    name='gender'
+                    value="Female"
+                    formControlName="gender"
+                    [ngClass]="{ 'is-invalid': submitted && form.gender.errors }"
+                    id="gender"
+                  />
+                  Female
+            </label>
+
+    </div>
+        <div *ngIf="submitted && form.gender.errors" class="invalid-feedback">
+          <div *ngIf="form.gender.errors.required">Gender is required</div>
+        </div>
+      </div>
+      <div class="text-center">
+            <button class="btn round btn-default mr-1" style="color:white;background-color: #09D95F;margin: 2.5%;"  >Register</button>
+            <button type="reset" class="btn round btn-default mr-1" (click)="onReset()" style="color:black;background-color:white;margin: 2.5%;border: 1px solid #09D95F"  >Reset</button>
+      </div>
+    </form>
+    </div>

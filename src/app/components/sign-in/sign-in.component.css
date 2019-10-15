@@ -1,0 +1,25 @@
+.round{
+    width: 61%;
+    border-radius: 25px;
+    font-size: larger;
+}
+
+.img img{
+    border-radius: 100%
+
+}
+
+.wrapper{
+    margin-top: 27%;
+}
+
+.login-form{
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 2%;
+}
+
+.error{
+    color: red;
+    border: 1px red;
+}

@@ -1,0 +1,34 @@
+<nav style="margin-bottom: 17px;" class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+    <a style="font-variant: all-small-caps;" class="navbar-brand" [routerLink]="[ '/' ]">Weight Tracker</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navb" class="navbar-collapse collapse hide">
+      <ul class="navbar-nav">
+
+        <li *ngIf="logined" class="nav-item">
+            <a [routerLink]="[ '/history' ]" class="nav-link" routerLinkActive="active">My History </a>
+          </li>
+
+      </ul>
+      <ul *ngIf="!logined" class="nav navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/sign-up']"><span class="fas fa-user"></span> Sign Up</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/sign-in']"><span class="fas fa-sign-in-alt"></span> Login </a>
+        </li>
+
+      </ul>
+      <ul *ngIf="logined" class="nav navbar-nav ml-auto">
+
+        
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/sign-out']"><span class="fas fa-sign-in-alt"></span> Sign Out </a>
+          </li>
+
+  
+        </ul>
+    </div>
+  </nav>
